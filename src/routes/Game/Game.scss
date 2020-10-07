@@ -1,0 +1,26 @@
+.players {
+  width: 50%;
+  height: 100%;
+}
+
+.players div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.active,
+.passive {
+  width: 100%;
+  height: 100%;
+}
+
+.active {
+  background-color: #26c6da;
+  color: white;
+}
+
+.passive {
+  background-color: #e0e0e0;
+}

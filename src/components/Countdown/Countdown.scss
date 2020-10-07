@@ -1,0 +1,61 @@
+.countdown {
+  font-size: 144px;
+  animation: colorwarning 8s 1;
+  color: red;
+}
+
+@keyframes colorwarning {
+  0% {
+    color: white;
+    font-size: 64px;
+  }
+  40% {
+    color: yellow;
+  }
+  60% {
+    color: orange;
+  }
+  90% {
+    color: orangered;
+  }
+  91% {
+    transform: rotate(-1deg);
+    font-size: 72px;
+  }
+  92% {
+    transform: rotate(1deg);
+    font-size: 80px;
+  }
+  93% {
+    transform: rotate(-1deg);
+    font-size: 88px;
+  }
+  94% {
+    transform: rotate(1deg);
+    font-size: 96px;
+  }
+  95% {
+    transform: rotate(-2deg);
+    font-size: 104px;
+  }
+  96% {
+    transform: rotate(2deg);
+    font-size: 112px;
+  }
+  97% {
+    transform: rotate(-2deg);
+    font-size: 120px;
+  }
+  98% {
+    transform: rotate(2deg);
+    font-size: 128px;
+  }
+  99% {
+    transform: rotate(-2deg);
+    font-size: 136px;
+  }
+  100% {
+    color: red;
+    font-size: 144px;
+  }
+}

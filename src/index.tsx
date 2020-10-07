@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { setConfig } from 'react-hot-loader';
+import { BrowserRouter } from 'react-router-dom';
+import './styles/index.scss';
 
-ReactDOM.render(
-  <React.StrictMode>
+import App from './App';
+
+setConfig({
+  ignoreSFC: true,
+  pureRender: true,
+});
+
+const Root: FunctionComponent = () => (
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </BrowserRouter>
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<Root />, document.getElementById('root'));

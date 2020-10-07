@@ -1,0 +1,57 @@
+$secondary: #ffa000;
+$primary: #ffc107;
+$action: #26c6da;
+
+html,
+body,
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+header {
+  text-align: center;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: $primary;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  margin: 8px;
+  padding: 8px;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: $secondary;
+  color: white;
+}
