@@ -1,3 +1,5 @@
+$white: #fff;
+
 .players {
   width: 50%;
   height: 100%;
@@ -5,9 +7,9 @@
 
 .players div {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .active,
@@ -18,7 +20,7 @@
 
 .active {
   background-color: #26c6da;
-  color: white;
+  color: $white;
 }
 
 .passive {

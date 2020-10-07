@@ -1,38 +1,37 @@
-$thick: 3px;
+$thick: 0.188rem;
 $pad: 0.7em;
 $extra: calc(#{$pad} * 1.2);
 $color: #26c6da;
+$black: #000;
 
 .button {
-  color: black;
-  padding: $pad $extra;
-  display: inline-block;
-  border: $thick solid transparent;
   position: relative;
-  font-size: 1.5em;
+  display: inline-block;
+  padding: $pad $extra;
+  border: $thick solid transparent;
+  color: $black;
   cursor: pointer;
+  font-size: 1.5em;
   letter-spacing: 0.07em;
 
   .text {
-    // padding: 0 0.3em;
+    display: block;
     font-family: proxima-nova, monospace;
     transform: translate3d(0, $pad, 0);
-    display: block;
     transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
   }
 
-  &:after {
+  &::after {
     position: absolute;
-    content: '';
+    right: $extra;
     bottom: -$thick;
     left: $extra;
-    right: $extra;
     height: $thick;
     background: $color;
-    // z-index: -1;
+    content: '';
+    transform-origin: left;
     transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s,
       right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
-    transform-origin: left;
   }
 }
 
@@ -42,42 +41,42 @@ $color: #26c6da;
 
   &.-right,
   &.-left {
-    width: $thick;
-    bottom: -$thick;
     top: -$thick;
+    bottom: -$thick;
+    width: $thick;
     transform: scale3d(1, 0, 1);
   }
 
   &.-top,
   &.-bottom {
-    height: $thick;
-    left: -$thick;
     right: -$thick;
+    left: -$thick;
+    height: $thick;
     transform: scale3d(0, 1, 1);
   }
 
   &.-right {
     right: -$thick;
-    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
     transform-origin: top;
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
   }
 
   &.-top {
     top: -$thick;
-    transition: transform 0.08s linear 0.43s;
     transform-origin: left;
+    transition: transform 0.08s linear 0.43s;
   }
 
   &.-left {
     left: -$thick;
-    transition: transform 0.08s linear 0.51s;
     transform-origin: bottom;
+    transition: transform 0.08s linear 0.51s;
   }
 
   &.-bottom {
     bottom: -$thick;
-    transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
     transform-origin: right;
+    transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
   }
 }
 
@@ -87,10 +86,10 @@ $color: #26c6da;
     transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
   }
 
-  &:after {
-    transform: scale3d(0, 1, 1);
+  &::after {
     right: -$thick;
     left: -$thick;
+    transform: scale3d(0, 1, 1);
     transform-origin: right;
     transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s,
       right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
@@ -100,23 +99,23 @@ $color: #26c6da;
     transform: scale3d(1, 1, 1);
 
     &.-right {
-      transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
       transform-origin: bottom;
+      transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
     }
 
     &.-top {
-      transition: transform 0.08s linear 0.4s;
       transform-origin: right;
+      transition: transform 0.08s linear 0.4s;
     }
 
     &.-left {
-      transition: transform 0.08s linear 0.48s;
       transform-origin: top;
+      transition: transform 0.08s linear 0.48s;
     }
 
     &.-bottom {
-      transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
       transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
     }
   }
 }

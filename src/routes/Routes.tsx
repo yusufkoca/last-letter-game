@@ -11,7 +11,7 @@ const Routes: FunctionComponent = () => (
       <Home />
     </Route>
     <Route path="/loading" exact component={Loading} />
-    <Route path="/game" exact component={Game}></Route>
+    <Route path="/game" exact component={Game} />
     <Route path="/new-game" exact component={NewGame} />
     <Route path="/*" exact>
       <Redirect to="/new-game" />

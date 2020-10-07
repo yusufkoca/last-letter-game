@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react';
-import PlayButton from '../../components/PlayButton';
 import SpeechRecognition from 'react-speech-recognition';
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
+import PlayButton from '../../components/PlayButton';
 
 const NewGame = () => {
   const [micPermissionGiven, setMicPermissionGiven] = React.useState(false);
 
   useEffect(() => {
-    navigator.permissions.query({ name: 'microphone' }).then(function (permissionStatus) {
+    navigator.permissions.query({ name: 'microphone' }).then((permissionStatus) => {
       if (permissionStatus.state === 'granted') {
         setMicPermissionGiven(true);
       } else {
         setMicPermissionGiven(false);
         SpeechRecognition.startListening({ language: 'tr' }); // to get mic permission before game begins
       }
-
-      permissionStatus.onchange = function () {
-        if (this.state === 'granted') {
+      /* eslint no-param-reassign: "error" */
+      permissionStatus.onchange = () => {
+        if (permissionStatus.state === 'granted') {
           setMicPermissionGiven(true);
           SpeechRecognition.stopListening(); // stop listening because it is just used to get mic permission
         } else {
@@ -30,7 +30,7 @@ const NewGame = () => {
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return (
       <Modal
-        isOpen={true}
+        isOpen
         contentLabel="Not supported"
         style={{
           content: {
@@ -56,7 +56,7 @@ const NewGame = () => {
   if (!micPermissionGiven) {
     return (
       <Modal
-        isOpen={true}
+        isOpen
         contentLabel="Mic Permission"
         style={{
           content: {

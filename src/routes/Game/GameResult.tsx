@@ -22,7 +22,7 @@ const GameResult = ({ winner = 'Computer', lastWord = '', words = [] }: GameResu
         ))}
       </p>
       <Link to="/new-game">
-        <CustomButton text="Play Again"></CustomButton>
+        <CustomButton text="Play Again" />
       </Link>
     </div>
   );

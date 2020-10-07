@@ -1,44 +1,45 @@
+$action: #26c6da;
+
 .circle {
-  stroke: #26c6da;
+  opacity: 0.3;
+  stroke: $action;
   stroke-dasharray: 650;
   stroke-dashoffset: 650;
-  -webkit-transition: all 0.5s ease-in-out;
-  opacity: 0.3;
+  transition: all 0.5s ease-in-out;
 }
 
 .playBut {
-  /*  border: 1px solid red;*/
   display: inline-block;
-  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 
   .triangle {
-    -webkit-transition: all 0.7s ease-in-out;
+    stroke: #000;
     stroke-dasharray: 240;
     stroke-dashoffset: 480;
-    stroke: #000;
     transform: translateY(0);
+    transition: all 0.7s ease-in-out;
   }
 
   &:hover {
     cursor: pointer;
     .triangle {
-      stroke-dashoffset: 0;
+      animation: nudge 0.7s ease-in-out;
       opacity: 1;
       stroke: #26c6da;
-      animation: nudge 0.7s ease-in-out;
+      stroke-dashoffset: 0;
 
       @keyframes nudge {
         0% {
           transform: translateX(0);
         }
         30% {
-          transform: translateX(-5px);
+          transform: translateX(-0.313rem);
         }
         50% {
-          transform: translateX(5px);
+          transform: translateX(0.313rem);
         }
         70% {
-          transform: translateX(-2px);
+          transform: translateX(-0.125);
         }
         100% {
           transform: translateX(0);
@@ -47,8 +48,12 @@
     }
 
     .circle {
-      stroke-dashoffset: 0;
       opacity: 1;
+      stroke-dashoffset: 0;
     }
   }
+}
+
+.playBut:focus {
+  outline: none;
 }

@@ -1,10 +1,10 @@
 import React from 'react';
+import Modal from 'react-modal';
 import GameResult from './GameResult';
 import './Game.scss';
 import Player from './Player';
 import Computer from './Computer';
 import ErrorBoundary from '../../components/ErrorBoundary';
-import Modal from 'react-modal';
 import isValidNewWord from '../../utils/isValidNewWord';
 
 const Game = () => {

@@ -1,19 +1,22 @@
 $secondary: #ffa000;
 $primary: #ffc107;
 $action: #26c6da;
+$white: #fff;
 
 html,
-body,
-#root {
+body {
   height: 100%;
+}
+#root {
   display: flex;
+  height: 100%;
   flex-direction: column;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,11 +26,11 @@ code {
 }
 
 header {
-  text-align: center;
   width: 100%;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background-color: $primary;
+  text-align: center;
 }
 
 nav {
@@ -36,22 +39,22 @@ nav {
 }
 
 nav a {
-  margin: 8px;
-  padding: 8px;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 main {
-  flex-grow: 1;
   display: flex;
-  justify-content: center;
+  flex-grow: 1;
   align-items: center;
+  justify-content: center;
 }
 
 footer {
-  text-align: center;
   width: 100%;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background-color: $secondary;
-  color: white;
+  color: $white;
+  text-align: center;
 }

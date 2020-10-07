@@ -1,14 +1,15 @@
 import React, { ErrorInfo } from 'react';
 
+type ErrorBoundaryProps = {
+  children: React.ReactNode;
+};
 type ErrorBoundaryState = {
   error: Error | null;
   errorInfo: ErrorInfo | null;
 };
 
-class ErrorBoundary extends React.Component {
-  state: ErrorBoundaryState;
-
-  constructor(props: object) {
+class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { error: null, errorInfo: null };
   }
@@ -23,21 +24,24 @@ class ErrorBoundary extends React.Component {
   }
 
   render() {
-    if (this.state.errorInfo) {
+    const { children } = this.props;
+    const { error, errorInfo } = this.state;
+
+    if (errorInfo) {
       // Error path
       return (
         <div>
           <h2>Something went wrong.</h2>
           <details style={{ whiteSpace: 'pre-wrap' }}>
-            {this.state.error && this.state.error.toString()}
+            {error && error.toString()}
             <br />
-            {this.state.errorInfo.componentStack}
+            {errorInfo.componentStack}
           </details>
         </div>
       );
     }
     // Normally, just render children
-    return this.props.children;
+    return children;
   }
 }
 

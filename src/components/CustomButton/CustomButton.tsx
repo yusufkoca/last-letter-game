@@ -9,9 +9,18 @@ type CustomButtonProps = {
 const CustomButton = ({ onClick, text = '' }: CustomButtonProps) => {
   return (
     <div
+      role="button"
+      tabIndex={0}
       className="button"
       onClick={() => {
-        onClick && onClick();
+        if (onClick) {
+          onClick();
+        }
+      }}
+      onKeyDown={() => {
+        if (onClick) {
+          onClick();
+        }
       }}
     >
       <span className="text">{text}</span>

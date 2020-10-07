@@ -1,61 +1,67 @@
+$white: #fff;
+$yellow: #ff0;
+$orange: #ff8000;
+$orangered: #ff4500;
+$red: #f00;
+
 .countdown {
-  font-size: 144px;
-  animation: colorwarning 8s 1;
-  color: red;
+  animation: countdowncolor 8s 1;
+  color: $red;
+  font-size: 9rem;
 }
 
-@keyframes colorwarning {
+@keyframes countdowncolor {
   0% {
-    color: white;
-    font-size: 64px;
+    color: $white;
+    font-size: 4rem;
   }
   40% {
-    color: yellow;
+    color: $yellow;
   }
   60% {
-    color: orange;
+    color: $orange;
   }
   90% {
-    color: orangered;
+    color: $orangered;
   }
   91% {
+    font-size: 4.5rem;
     transform: rotate(-1deg);
-    font-size: 72px;
   }
   92% {
+    font-size: 5rem;
     transform: rotate(1deg);
-    font-size: 80px;
   }
   93% {
+    font-size: 5.5rem;
     transform: rotate(-1deg);
-    font-size: 88px;
   }
   94% {
+    font-size: 6rem;
     transform: rotate(1deg);
-    font-size: 96px;
   }
   95% {
+    font-size: 6.5rem;
     transform: rotate(-2deg);
-    font-size: 104px;
   }
   96% {
+    font-size: 7rem;
     transform: rotate(2deg);
-    font-size: 112px;
   }
   97% {
+    font-size: 7.5rem;
     transform: rotate(-2deg);
-    font-size: 120px;
   }
   98% {
+    font-size: 8rem;
     transform: rotate(2deg);
-    font-size: 128px;
   }
   99% {
+    font-size: 8.5rem;
     transform: rotate(-2deg);
-    font-size: 136px;
   }
   100% {
-    color: red;
-    font-size: 144px;
+    color: $red;
+    font-size: 9rem;
   }
 }

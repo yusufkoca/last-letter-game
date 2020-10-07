@@ -4,9 +4,18 @@ import './PlayButton.scss';
 const PlayButton = ({ onClick }: { onClick?: () => void }) => {
   return (
     <div
+      role="button"
+      tabIndex={0}
       className="playBut"
       onClick={() => {
-        onClick && onClick();
+        if (onClick) {
+          onClick();
+        }
+      }}
+      onKeyDown={() => {
+        if (onClick) {
+          onClick();
+        }
       }}
     >
       <svg
