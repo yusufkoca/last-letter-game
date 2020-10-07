@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import PlayButton from '../../components/PlayButton';
-import Game from './Game';
 import SpeechRecognition from 'react-speech-recognition';
 import Modal from 'react-modal';
+import { Link } from 'react-router-dom';
 
 const NewGame = () => {
-  const [isUserReady, setUserReady] = React.useState(false);
   const [micPermissionGiven, setMicPermissionGiven] = React.useState(false);
 
   useEffect(() => {
@@ -77,6 +76,7 @@ const NewGame = () => {
           For more info{' '}
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://support.google.com/chrome/answer/2693767?co=GENIE.Platform%3DDesktop&hl=en&oco=0"
           >
             click here
@@ -86,17 +86,11 @@ const NewGame = () => {
     );
   }
 
-  if (isUserReady) {
-    return <Game />;
-  } else {
-    return (
-      <PlayButton
-        onClick={() => {
-          setUserReady(true);
-        }}
-      />
-    );
-  }
+  return (
+    <Link to="/game">
+      <PlayButton />
+    </Link>
+  );
 };
 
 export default NewGame;

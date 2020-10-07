@@ -21,7 +21,7 @@ const Player = ({ isActive, onChange, word, onCountDownEnd }: PlayerProps) => {
       SpeechRecognition.stopListening();
       resetTranscript();
     }
-  }, [isActive]);
+  }, [isActive, resetTranscript]);
 
   useEffect(() => {
     if (debouncedTranscript) {

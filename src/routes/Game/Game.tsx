@@ -17,7 +17,7 @@ const Game = () => {
     if (!gameOver) {
       setWord(newName);
       if (isValidNewWord(newName, words)) {
-        setWords([...words, newName]);
+        setWords((prevWords) => [...prevWords, newName]);
         setPlayersTurn((prev) => !prev);
       } else {
         setGameOver(true);
@@ -27,13 +27,6 @@ const Game = () => {
 
   const onCountDownEnd = () => {
     setGameOver(true);
-  };
-
-  const onReplay = () => {
-    setGameOver(false);
-    setWord('');
-    setWords([]);
-    setPlayersTurn(false);
   };
 
   return (
@@ -54,12 +47,7 @@ const Game = () => {
           },
         }}
       >
-        <GameResult
-          lastWord={word}
-          winner={isPlayersTurn ? 'Computer' : 'You'}
-          words={words}
-          onReplay={onReplay}
-        />
+        <GameResult lastWord={word} winner={isPlayersTurn ? 'Computer' : 'You'} words={words} />
       </Modal>
       <div className="players">
         <ErrorBoundary>

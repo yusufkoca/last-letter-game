@@ -1,19 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CustomButton from '../../components/CustomButton';
 
 type GameResultProps = {
   winner?: string;
   lastWord: string;
   words: string[];
-  onReplay: () => void;
 };
 
-const GameResult = ({
-  winner = 'Computer',
-  lastWord = '',
-  words = [],
-  onReplay,
-}: GameResultProps) => {
+const GameResult = ({ winner = 'Computer', lastWord = '', words = [] }: GameResultProps) => {
   return (
     <div>
       <h1>Winner: {winner}</h1>
@@ -26,7 +21,9 @@ const GameResult = ({
           </span>
         ))}
       </p>
-      <CustomButton text="Play Again" onClick={() => onReplay()} />
+      <Link to="/new-game">
+        <CustomButton text="Play Again"></CustomButton>
+      </Link>
     </div>
   );
 };
