@@ -1,6 +1,6 @@
 A simple last letter game with Turkish names list given in a json file. It's better played with mic and headphone since this game requires you to not type but talk and listen to your computer.
 
-Demo Link -> https://last-letter-game.netlify.app/new-game
+Demo Link -> https://last-letter-game.netlify.app
 
 ## JS Stack
 
