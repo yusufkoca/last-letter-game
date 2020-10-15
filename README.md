@@ -1,3 +1,14 @@
+A simple last letter game with Turkish names list given in a json file. It's better played with mic and headphone since this game requires you to not type but talk and listen to your computer.
+
+Demo Link -> https://last-letter-game.netlify.app
+
+## JS Stack
+
+- React
+- Typescript
+- React Router
+- SpeechRecognition & SpeechSynthesis features from WEB API
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
