@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useDebounce } from 'use-debounce';
-import Countdown from '../../components/Countdown';
+import GameTable from './GameTable';
 
 type PlayerProps = {
   isActive: boolean;
@@ -29,14 +29,7 @@ const Player = ({ isActive, onChange, word, onCountDownEnd }: PlayerProps) => {
     }
   }, [debouncedTranscript]);
 
-  return (
-    <div className={isActive ? 'active' : 'passive'}>
-      <h1>{isActive ? 'Your turn' : "Computer's turn"}</h1>
-      <br />
-      {isActive ? <Countdown onEnd={onCountDownEnd} /> : null}
-      <h2>{!isActive ? word : ''}</h2>
-    </div>
-  );
+  return <GameTable onCountDownEnd={onCountDownEnd} word={word} isActive={isActive} />;
 };
 
 export default Player;

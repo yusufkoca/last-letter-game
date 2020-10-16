@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import Countdown from '../../components/Countdown';
 import pickAName from '../../utils/pickAName';
 import pickANameBeginningWith from '../../utils/pickANameBeginningWith';
+import GameTable from './GameTable';
 
 type ComputerProps = {
   isActive: boolean;
@@ -28,14 +28,7 @@ const Computer = ({ isActive, onChange, word, onCountDownEnd }: ComputerProps) =
     }
   }, [isActive]);
 
-  return (
-    <div className={isActive ? 'active' : 'passive'}>
-      <h1>{isActive ? "Computer's turn" : "Player's turn"}</h1>
-      <br />
-      {isActive ? <Countdown onEnd={onCountDownEnd} /> : null}
-      <h2>{!isActive ? word : ''}</h2>
-    </div>
-  );
+  return <GameTable onCountDownEnd={onCountDownEnd} word={word} isActive={isActive} />;
 };
 
 export default Computer;

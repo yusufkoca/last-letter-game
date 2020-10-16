@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import SpeechRecognition from 'react-speech-recognition';
-import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 import PlayButton from '../../components/PlayButton';
+import MicPermission from './MicPermission';
+import SpeechNotSupported from './SpeechNotSupported';
 
 const NewGame = () => {
   const [micPermissionGiven, setMicPermissionGiven] = React.useState(false);
@@ -28,62 +29,11 @@ const NewGame = () => {
   }, []);
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-    return (
-      <Modal
-        isOpen
-        contentLabel="Not supported"
-        style={{
-          content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-            textAlign: 'center',
-            padding: 32,
-          },
-        }}
-      >
-        <p>
-          Speech Recognition feature is not supported for your browser. You may try to use another
-          web browser or upgrade the current one.
-        </p>
-      </Modal>
-    );
+    return <SpeechNotSupported />;
   }
 
   if (!micPermissionGiven) {
-    return (
-      <Modal
-        isOpen
-        contentLabel="Mic Permission"
-        style={{
-          content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-            textAlign: 'center',
-            padding: 32,
-          },
-        }}
-      >
-        <p>This game requires mic usage. Please give permission to continue.</p>
-        <p>
-          For more info{' '}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://support.google.com/chrome/answer/2693767?co=GENIE.Platform%3DDesktop&hl=en&oco=0"
-          >
-            click here
-          </a>
-        </p>
-      </Modal>
-    );
+    return <MicPermission />;
   }
 
   return (
